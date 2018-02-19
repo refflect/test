@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <title>Можно скачать</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Дайджест торрент трекеров">
+    <meta name="keywords" content="кино, можноскачать, скачать, торрент">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, nofollow">
+    <link rel="shortcut icon" href="../images/icons/favicon-32x32.png">
+    <link rel="alternate" hreflang="de" href="index.html?language=de">
+    <link rel="alternate" hreflang="en" href="index.html?language=en">
+    <link rel="alternate" hreflang="ru" href="index.html">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+    <div id="app" class="page-wrapper">
+		<header>
+            <a href="#" class="logo">
+                <img src="../images/backgrounds/logo3.png" alt="#isDownloadable" width="32" height="32">
+				  <span v-if="!hidden" v-on:click="reverseMessage">
+					{{message}}
+				  </span>
+            </a>
+			<nav class="tag-container">
+
+									  <ol>
+						<todo-item
+						  v-for="tag in tags"
+						  v-bind:todo="tag"
+						  v-bind:key="tag.id">
+						</todo-item>
+					  </ol>
+					  
+				<ul>
+					<li  v-for="tag in tags" :key="tag.id"  class="tag-container__tag">
+						<input type="checkbox"  :id="tag.id" :value="tag.id" v-model="selectedTags">
+						<label :for="tag.id"> {{ tag.name }} </label>
+					</li>
+				</ul>
+				
+				
+					<tag-container  v-bind:tags2="tags">
+					
+					</tag-container>				
+
+				
+			</nav>
+			<div>{{ counter }}</div>
+			<div>{{ selectedTags }}</div>
+			
+
+			<div>Отмеченные теги: {{ selectedTags }}</div>
+		<main>
+			<div class="article-holder">
+				<article v-for="n in 10">
+					<img src="../files/Субурбикон.jpg" alt="Субурбикон">
+					<div class="article__links">
+						<span class="views">8</span>
+						<span class="date">Пт, 17. Фев 2017</span>
+					</div>
+					<div class="article__details">
+						<h2 class="article__details__title">Субурбикон</h2>
+						<p class="article__details__description">
+							Добро пожаловать в солнечный Субурбикон! В прекрасный тихий городок в самом сердце Америки. Счастливые семьи. Недорогие миленькие дома. Ухоженные газоны. Воплощение американской мечты. Чудесную жизнь городка внезапно прерывает шокирующее, из ряда вон выходящее событие — образцовая семья переживает вторжение в их семейное гнёздышко. Это событие толкает на худшие поступки в их идиллической жизни — шантаж, месть и предательство.
+						</p>
+					</div>
+				</article>
+		
+			</div>
+			
+		</main>
+		<footer>
+            <small>#МожноСкачать © 2017</small>
+        </footer>
+    </div>
+	<script src="../scripts/vue.js"></script>
+	<script src="../scripts/app.js"></script>
+</body>
+</html>
