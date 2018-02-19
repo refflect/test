@@ -4,7 +4,7 @@ Vue.component('todo-item', {
 });
 
 Vue.component('tag-container', {
-    props: ['tags2'],
+    props: ['tags3'],
 	template: '<ul>\
 					<li  v-for="tag2 in tags2" :key="tag2.id"  class="tag-container__tag">\
 						<input type="checkbox"  :id="tag2.id" :value="tag2.id" v-model="selectedTags">\
