@@ -3,15 +3,6 @@ Vue.component('todo-item', {
 	template: '<li>{{ todo.name }}</li>'
 });
 
-Vue.component('tag-container', {
-    props: ['tags2'],
-	template: `<ul>
-					<li  v-for="tag2 in tags2" :key="tag2.id"  class="tag-container__tag">
-						<input type="checkbox"  :id="tag2.id" :value="tag2.id" v-model="selectedTags">
-						<label :for="tag2.id"> {{ tag2.name }} </label>
-					</li>
-				<ul>`
-});
 
 var app = new Vue({
 	el: '#app',
