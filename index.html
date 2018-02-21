@@ -34,19 +34,15 @@
 					  
 				<ul>
 					<li  v-for="tag in tags" :key="tag.id"  class="tag-container__tag">
-						<input type="checkbox"  :id="tag.id" :value="tag.id" v-model="selectedTags">
+						<input type="checkbox"  :id="tag.id" :value="tag.id" v-model="selectedTags"  @click="yaCounter">
 						<label :for="tag.id"> {{ tag.name }} </label>
 					</li>
 				</ul>
 				
 				
-					<tag-container  v-bind:tags2="tags">
-					
-					</tag-container>				
-
-				
 			</nav>
 			<div>{{ counter }}</div>
+			<div>{{ yaClientID }}</div>
 			<div>{{ selectedTags }}</div>
 			
 
@@ -74,6 +70,11 @@
             <small>#МожноСкачать © 2017</small>
         </footer>
     </div>
+
+
+	<!-- Yandex.Metrika counter --> <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter47759482 = new Ya.Metrika({ id:47759482, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/47759482" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	<!-- /Yandex.Metrika counter -->
+	
 	<script src="../scripts/vue.js"></script>
 	<script src="../scripts/app.js"></script>
 </body>

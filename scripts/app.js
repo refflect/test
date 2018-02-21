@@ -3,15 +3,6 @@ Vue.component('todo-item', {
 	template: '<li>{{ todo.name }}</li>'
 });
 
-Vue.component('tag-container', {
-    props: ['tags2'],
-	template: `<ul>
-					<li  v-for="tag2 in tags2" :key="tag2.id"  class="tag-container__tag">
-						<input type="checkbox"  :id="tag2.id" :value="tag2.id" v-model="selectedTags">
-						<label :for="tag2.id"> {{ tag2.name }} </label>
-					</li>
-				<ul>`
-});
 
 var app = new Vue({
 	el: '#app',
@@ -19,6 +10,7 @@ var app = new Vue({
 		//message: 'You loaded this page on ' + new Date().toLocaleString(),
 		message: 'МожноСкачать',
 		counter: 0,
+		yaClientID: '',
 		hidden: false,
 		checked: false,
 		tags: [
@@ -51,6 +43,14 @@ var app = new Vue({
 				this.selectedTags.splice(index, 1);
 			}
 			this.checked = !this.checked;
+		},
+		yaCounter: function(e, target = 'GOAL136604618'){
+			this.yaClientID = yaCounter47759482.getClientID();
+			console.log( target,  this.yaClientID);
+			/* Sending target to Yandex Metrika */
+			try {
+				yaCounter47759482.reachGoal(target);
+			} catch(e) { }		
 		}
 	},
 
