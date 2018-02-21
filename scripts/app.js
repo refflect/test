@@ -17,6 +17,7 @@ var app = new Vue({
 			{ id: '2160p', name: '2160p|4K' },
 			{ id: '1080p', name: '1080p' },
 			{ id: '720p', name: '720p' },
+			{ id: '540p', name: '540p' },
 			{ id: 'dub', name: 'Дубляж' }
 		],
 		selectedTags: [],
